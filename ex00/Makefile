@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/02/10 15:15:56 by jvenkata          #+#    #+#              #
-#    Updated: 2026/02/10 15:16:52 by jvenkata         ###   ########.fr        #
+#    Created: 2026/01/21 14:55:00 by jvenkata          #+#    #+#              #
+#    Updated: 2026/02/10 14:51:50 by jvenkata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Unecessary_Violence
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+NAME = BraiiiiiiinnnzzzZ
 C = c++
 CFLAGS = -Iinclude -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -22,7 +22,7 @@ $(NAME): $(OBJ)
 	$(C) $(OBJ) -o $@
 
 %.o: %.cpp
-	$(C) $(CFLAGS) -c $< -o $@
+	$(C) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

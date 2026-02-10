@@ -1,37 +1,35 @@
-# Nom de l'exécutable
-NAME = reference
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/10 15:07:24 by jvenkata          #+#    #+#              #
+#    Updated: 2026/02/10 15:15:15 by jvenkata         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Compilateur et flags
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = Reference
+SRC = main.cpp
+C = c++
+CFLAGS = -Iinclude -Wall -Wextra -Werror -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
-# Fichiers sources
-SRCS = main.cpp
-	   
-
-# Fichiers objets
-OBJS = $(SRCS:.cpp=.o)
-
-# Règle par défaut
 all: $(NAME)
 
-# Création de l'exécutable
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(C) $(OBJ) -o $@
 
-# Compilation des .cpp en .o
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(C) $(CFLAGS) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
-# Nettoyage complet
 fclean: clean
 	rm -f $(NAME)
 
-# Rebuild complet
 re: fclean all
 
 .PHONY: all clean fclean re

@@ -1,38 +1,35 @@
-# Nom de l'exécutable
-NAME = zombie
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/10 15:04:41 by jvenkata          #+#    #+#              #
+#    Updated: 2026/02/10 15:06:37 by jvenkata         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# Compilateur et flags
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = ZombieHorde
+C = c++
+CFLAGS = -Iinclude -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
+OBJ = $(SRC:.cpp=.o)
 
-# Fichiers sources
-SRCS = main.cpp \
-       Zombie.cpp \
-       zombieHorde.cpp \
-
-# Fichiers objets
-OBJS = $(SRCS:.cpp=.o)
-
-# Règle par défaut
 all: $(NAME)
 
-# Création de l'exécutable
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(C) $(OBJ) -o $@
 
-# Compilation des .cpp en .o
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(C) $(CFLAGS) -c $< -o $@
 
-# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
-# Nettoyage complet
 fclean: clean
 	rm -f $(NAME)
 
-# Rebuild complet
 re: fclean all
 
 .PHONY: all clean fclean re
