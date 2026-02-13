@@ -6,7 +6,7 @@
 /*   By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 10:38:43 by julian            #+#    #+#             */
-/*   Updated: 2026/02/13 13:28:01 by jvenkata         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:29:19 by jvenkata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main() 
 {
-    Zombie* zombie1 = newZombie("Zombie1");
+    Zombie* zombie1 = new_Zombie("Zombie1");
     zombie1->announce();
     delete zombie1;
 
