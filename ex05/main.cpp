@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+        */
+/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 10:38:43 by julian            #+#    #+#             */
-/*   Updated: 2026/02/13 13:28:01 by jvenkata         ###   ########.fr       */
+/*   Created: 2026/01/29 23:14:14 by julian            #+#    #+#             */
+/*   Updated: 2026/01/29 23:14:14 by julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main() 
+int main()
 {
-    Zombie* zombie1 = newZombie("Zombie1");
-    zombie1->announce();
-    delete zombie1;
+    Harl harl;
 
-    randomChump("Zombie2");
+    harl.complain("DEBUG");
+    harl.complain("INFO");
+    harl.complain("WARNING");
+    harl.complain("ERROR");
+    harl.complain("UNKNOWN");
 
     return 0;
 }
