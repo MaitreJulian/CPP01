@@ -3,30 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: julian <julian@student.42.fr>              +#+  +:+       +#+         #
+#    By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/17 15:52:26 by julian            #+#    #+#              #
-#    Updated: 2026/01/29 23:15:02 by julian           ###   ########.fr        #
+#    Updated: 2026/02/13 13:30:52 by jvenkata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C++ = c++
-C++_FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-INFILES = 	main.cpp\
-			Harl.cpp\
-
-OBJFILES = $(INFILES:.cpp=.o)
-
 NAME = Harl
+SRC = main.cpp Harl.cpp
+C = c++
+CFLAGS = -Iinclude -Wall -Wextra -Werror -g -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
+$(NAME): $(OBJ)
+	$(C) $(OBJ) -o $@
 
-$(NAME):$(OBJFILES)
-	$(C++) $(C++_FLAGS) $(OBJFILES) -o $(NAME) 
+%.o: %.cpp
+	$(C) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJFILES)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

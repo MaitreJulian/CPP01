@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julian <julian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jvenkata <jvenkata@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 23:13:08 by julian            #+#    #+#             */
-/*   Updated: 2026/01/29 23:13:59 by julian           ###   ########.fr       */
+/*   Updated: 2026/02/13 13:39:17 by jvenkata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void Harl::complain( std::string level )
         "ERROR"
     };
 
-    for (size_t i = 0; i < sizeof(levels) / sizeof(levels[0]); i++)
+    for (size_t i = 0; i < 4; i++)
     {
         if (levels[i] == level)
         {
